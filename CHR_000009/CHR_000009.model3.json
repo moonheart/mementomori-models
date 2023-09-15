@@ -1,0 +1,152 @@
+{
+  "Version": 3,
+  "Name": "CHR_000009",
+  "FileReferences": {
+    "Moc": "CHR_000009.moc3",
+    "Textures": [
+"textures/texture_00.png",      "textures/Default-Particle.png",
+      "textures/EF_000009.png"
+    ],
+    "Physics": "CHR_000009.physics3.json",
+    "Motions": {
+      "EF_Idle.anim": [
+        {
+          "File": "motions/EF_Idle.anim.motion3.json"
+        }
+      ],
+      "Face_Angry.anim": [
+        {
+          "File": "motions/Face_Angry.anim.motion3.json"
+        }
+      ],
+      "Face_Blushing.anim": [
+        {
+          "File": "motions/Face_Blushing.anim.motion3.json"
+        }
+      ],
+      "Face_Eye_Close.anim": [
+        {
+          "File": "motions/Face_Eye_Close.anim.motion3.json"
+        }
+      ],
+      "Face_Eye_Grin.anim": [
+        {
+          "File": "motions/Face_Eye_Grin.anim.motion3.json"
+        }
+      ],
+      "Face_Glad.anim": [
+        {
+          "File": "motions/Face_Glad.anim.motion3.json"
+        }
+      ],
+      "Face_Look_Down.anim": [
+        {
+          "File": "motions/Face_Look_Down.anim.motion3.json"
+        }
+      ],
+      "Face_Look_Left.anim": [
+        {
+          "File": "motions/Face_Look_Left.anim.motion3.json"
+        }
+      ],
+      "Face_Look_Right.anim": [
+        {
+          "File": "motions/Face_Look_Right.anim.motion3.json"
+        }
+      ],
+      "Face_Look_Up.anim": [
+        {
+          "File": "motions/Face_Look_Up.anim.motion3.json"
+        }
+      ],
+      "Face_Sad.anim": [
+        {
+          "File": "motions/Face_Sad.anim.motion3.json"
+        }
+      ],
+      "Face_Smile.anim": [
+        {
+          "File": "motions/Face_Smile.anim.motion3.json"
+        }
+      ],
+      "Face_Surprise.anim": [
+        {
+          "File": "motions/Face_Surprise.anim.motion3.json"
+        }
+      ],
+      "Face_Unique1.anim": [
+        {
+          "File": "motions/Face_Unique1.anim.motion3.json"
+        }
+      ],
+      "Idle_Action.anim": [
+        {
+          "File": "motions/Idle_Action.anim.motion3.json"
+        }
+      ],
+      "Idle.anim": [
+        {
+          "File": "motions/Idle.anim.motion3.json"
+        }
+      ],
+      "Memory_In.anim": [
+        {
+          "File": "motions/Memory_In.anim.motion3.json"
+        }
+      ],
+      "Memory_Loop.anim": [
+        {
+          "File": "motions/Memory_Loop.anim.motion3.json"
+        }
+      ],
+      "Memory_Out_End.anim": [
+        {
+          "File": "motions/Memory_Out_End.anim.motion3.json"
+        }
+      ],
+      "Memory_Out.anim": [
+        {
+          "File": "motions/Memory_Out.anim.motion3.json"
+        }
+      ],
+      "Skill.anim": [
+        {
+          "File": "motions/Skill.anim.motion3.json"
+        }
+      ],
+      "Talk_In.anim": [
+        {
+          "File": "motions/Talk_In.anim.motion3.json"
+        }
+      ],
+      "Talk_Loop.anim": [
+        {
+          "File": "motions/Talk_Loop.anim.motion3.json"
+        }
+      ],
+      "Talk_Out.anim": [
+        {
+          "File": "motions/Talk_Out.anim.motion3.json"
+        }
+      ]
+    },
+    "Expressions": []
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": [
+        "ParamEyeROpen",
+        "ParamEyeLOpen"
+      ]
+    },
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": [
+        "ParamMouthOpenY"
+      ]
+    }
+  ]
+}
