@@ -35,13 +35,13 @@ class Viewer {
             name = name.split('/').pop();
             let modelPath = name + '.model3.json';
             // this.l2d.load(name, this);
-            // const model = await PIXI.live2d.Live2DModel.from('https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/assets/shizuku/shizuku.model.json')
-            this.model = await PIXI.live2d.Live2DModel.from('/models/' + modelDir + modelPath, { idleMotionGroup: 'Idle.anim',autoInteract: false })
+            // const model = await PIXI.live2d.Live2DModel.from('https://cdn.jsdelivr.net/gh/moonheart/mementomori-models/models/')
+            this.model = await PIXI.live2d.Live2DModel.from('https://cdn.jsdelivr.net/gh/moonheart/mementomori-models/models/' + modelDir + modelPath, { idleMotionGroup: 'Idle.anim',autoInteract: false })
             this.app.stage.removeChildren()
             this.app.stage.addChild(this.model)
             this.model.scale.set(0.2)
             this.model.x = -200;
-            this.model.y = -200;
+            this.model.y = -0;
 
 
             this.selectAnimation.empty();
@@ -83,8 +83,8 @@ class Viewer {
         //     if (event === void 0) { event = null; }
         //     let width = window.innerWidth;
         //     let height = (width / 16.0) * 9.0;
-        //     this.app.view.style.width = width + "px";
-        //     this.app.view.style.height = height + "px";
+        //     // this.app.renderer.width = width + "px";
+        //     // this.app.renderer.height = height + "px";
         //     this.app.renderer.resize(width, height);
         //
         //     if (this.model) {
@@ -96,10 +96,10 @@ class Viewer {
         //         this.model.scale = new PIXI.Point((this.model.position.x * 0.6), (this.model.position.x * 0.6));
         //     }
         // };
-        // this.isClick = false;
-        this.app.view.addEventListener('mousedown', (event) => {
-            this.isClick = true;
-        });
+        // // this.isClick = false;
+        // this.app.view.addEventListener('mousedown', (event) => {
+        //     this.isClick = true;
+        // });
         // this.app.view.addEventListener('mousemove', (event) => {
         //     if (this.isClick) {
         //         this.isClick = false;
