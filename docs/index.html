@@ -2,12 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Live2d Cubism 3</title>
     <link rel="icon" href="../avatar.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <a href="../">MementoMori Live2d</a>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/moonheart/mementomori-models">Github</a>
     <div class="form-group">
         <select class="selectCharacter form-control"></select>
@@ -15,8 +16,8 @@
     <div class="selectAnimation btn-group" role="group" aria-label="Animation" style="display: flex; flex-wrap: wrap;"></div>
 
     <!-- Canvas -->
-    <div id="canvasContainer" style="width: 100%; height: 1024px; align-content: center">
-        <canvas id="canvas" class="Canvas left" style="width: 100%; height: 1024px"></canvas>
+    <div id="canvasContainer" style="width: 100%; aspect-ratio: 1">
+        <canvas id="canvas" class="Canvas left" style="width: 100%;  aspect-ratio: 1"></canvas>
     </div>
 </div>
 

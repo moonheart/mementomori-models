@@ -5,10 +5,12 @@ $(document).ready(() => {
 
 class Viewer {
     constructor (basePath) {
+        var canvas = document.getElementById("canvas");
+        
         this.app = new PIXI.Application({
-            view: document.getElementById("canvas"),
+            view: canvas,
             autoStart: true,
-            resizeTo: document.getElementById("canvas"),
+            resizeTo: canvas,
         });
         this.app.renderer.backgroundColor = 0xffffff
 
