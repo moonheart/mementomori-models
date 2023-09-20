@@ -1,7 +1,4 @@
-
-
 var v;
-// v.l2d.models
 $(document).ready(() => {
     v = new Viewer('model');
 });
@@ -11,13 +8,10 @@ class Viewer {
         this.app = new PIXI.Application({
             view: document.getElementById("canvas"),
             autoStart: true,
-            resizeTo: window,
+            resizeTo: document.getElementById("canvas"),
         });
         this.app.renderer.backgroundColor = 0xffffff
 
-        // this.l2d = new L2D(basePath);
-
-        // this.canvas = $("#canvas");
         this.selectCharacter = $(".selectCharacter");
         this.selectAnimation = $(".selectAnimation");
 
@@ -30,55 +24,33 @@ class Viewer {
             if (event.target.selectedIndex == 0) {
                 return;
             }
+            this.selectAnimation.empty()
+            this.selectAnimation.append(document.createTextNode("Loading..."));
             let name = event.target.value;
             let modelDir = name + '/';
             name = name.split('/').pop();
             let modelPath = name + '.model3.json';
-            // this.l2d.load(name, this);
-            // const model = await PIXI.live2d.Live2DModel.from('https://cdn.jsdelivr.net/gh/moonheart/mementomori-models/models/')
             this.model = await PIXI.live2d.Live2DModel.from('https://cdn.jsdelivr.net/gh/moonheart/mementomori-models/models/' + modelDir + modelPath, { idleMotionGroup: 'Idle.anim',autoInteract: false })
             this.app.stage.removeChildren()
             this.app.stage.addChild(this.model)
-            this.model.scale.set(0.2)
-            this.model.x = -200;
-            this.model.y = -0;
 
+            var scale = this.app.view.width / this.model.internalModel.width  
+            this.model.scale.set(scale)
 
             this.selectAnimation.empty();
             Object.keys(this.model.internalModel.motionManager.motionGroups).forEach((key)=>{
-            // this.model.internalModel.motionManager.motionGroups.forEach((value, key)=>{
-            // this.model.motion.forEach((value, key) => {
-            //     if (key != "effect") {
-                    let btn = document.createElement("button");
-                    let label = document.createTextNode(key);
-                    btn.appendChild(label);
-                    btn.className = "btn btn-secondary";
-                    btn.addEventListener("click", () => {
-                        this.model.motion(key);
-                    });
-                    this.selectAnimation.append(btn);
-                // }
+                let btn = document.createElement("button");
+                let label = document.createTextNode(key);
+                btn.appendChild(label);
+                btn.className = "btn btn-secondary";
+                btn.addEventListener("click", () => {
+                    this.model.motion(key);
+                });
+                this.selectAnimation.append(btn);
             });
-
         });
 
-        // this.app = new PIXI.Application(1280, 720, { backgroundColor: 0xffffff });
-        let width = window.innerWidth;
-        // let height = (width / 16.0) * 9.0;
-        let height = width;
-        this.app.view.style.width = width + "px";
-        this.app.view.style.height = height + "px";
-        this.app.renderer.resize(width, height);
-        // this.canvas.html(this.app.view);
 
-        // this.app.ticker.add((deltaTime) => {
-        //     if (!this.model) {
-        //         return;
-        //     }
-        //
-        //     this.model.update(deltaTime);
-        //     this.model.masks.update(this.app.renderer);
-        // });
         // window.onresize = (event) => {
         //     if (event === void 0) { event = null; }
         //     let width = window.innerWidth;
